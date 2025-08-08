@@ -1,2 +1,37 @@
 {% extends "base.html" %}
+{% load static %}
+{% comment %} CREATING DYNAMIC DATA IS ALWAYS THE GOAL! {% endcomment %}
+{% block title %}
+    My Blog
+{% endblock  %}
 
+ {% block css_files %}
+     <link rel="stylesheet" href="{% static "blog/post.css" %}" />
+    <link rel="stylesheet" href="{% static "blog/index.css" %}" />
+ {% endblock css_files %}
+
+{% block content %}
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/naruto.png"%}" alt="Nishant - the Author of this Blog"/>
+            <h2>Nishant's Blog</h2>
+        </header>
+            <p>Hi, I’m Nishant — a curious mind who loves writing about tech, maths, and all the little sparks of creativity that pop up along the way!</p>
+    </section>
+
+    <section id = "latest-posts">
+        <h2>My Latest Thought</h2>
+
+        <ul>
+            {% include "blog/includes/post.html" %}
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>What I Do</h2>
+        <p>I'm a programmer at heart, always eager to help, experiment, and dive into exciting new tech stacks.</p>
+        <p>Forever learning. Always growing.</p>
+    </section>
+{% endblock %}
+
+{% comment %} BEM Block Element Modifier {% endcomment %}
