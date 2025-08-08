@@ -19,5 +19,6 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("blog/", include("blog.urls"))
+    path("", include("blog.urls")), #localhost:8000:/posts/my-first-page
+    # blog is not the main app but we will make it main
 ]
